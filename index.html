@@ -4,14 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
     <title>Morgan's Coding Quiz!</title>
 </head>
 <body>
-    <section class="scores"></section>
-    <section class="timer">
-        <h2 class="time" style="text-align: right;"></h2>
-    </section>
-    <h1>Random Trivia Game</h1>
+    <!--header contains score and timer-->
+    <header>
+        <section class="scores">
+            <h2 class="score"></h2>
+        </section>
+        <section class="timer">
+            <h2 class="time"></h2>
+        </section>
+    </header>
+    <!--first section is the landing page-->
+    <main class="glue">
+        <section id="landing">
+            <h1>Random Trivia Game</h1>
+            <p>Try to answer my questions within the time limit! Any incorrect answers will knock 10 seconds off your remaining time so please keep that in mind! All the questions are random bits of knowledge I've learned over the years :)</p>
+            <button id="start">Start Quiz</button>
+        </section>
+        <!--second section is for the questions-->
+        <section id="questions"></section>
+        <!--third section is for the final screen-->
+        <section id="end-screen"></section>
+        <!--fourth section is for feedback?-->
+        <section id="feedback"></section>
+    </main>
 
     <script src="./script.js"></script>
 </body>

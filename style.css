@@ -1,0 +1,14 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+/*score and timer*/
+header {
+    display: flex;
+    justify-content: space-between;
+}
+/*main page*/
+#landing {
+    display: block;
+    text-align: center;
+    font-size: 120%;
+}
