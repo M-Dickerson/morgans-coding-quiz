@@ -8,7 +8,5 @@ header {
 }
 /*main page*/
 #landing {
-    display: block;
     text-align: center;
-    font-size: 120%;
 }

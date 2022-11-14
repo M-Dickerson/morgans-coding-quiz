@@ -41,15 +41,12 @@ var myQuestions = [
     correctAnswer: 'c'
 },
 ]
-
-
-
-var targetLanding = document.getElementById("landing");
-var btn = document.getElementById("start");
-btn.oneclick = function () {
-    if (targetLanding.style.display !=="none") {
-        targetLanding.style.display = "none";
+// button
+function myFunction() {
+    var landing = document.getElementById("landing");
+    if (landing.style.display === "none") {
+        landing.style.display = "block";
     } else {
-        targetLanding.style.display = "block";
+        landing.style.display = "none";
     }
-};
+}
