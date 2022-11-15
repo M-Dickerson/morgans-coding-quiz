@@ -10,7 +10,7 @@ header {
 #landing {
     text-align: center;
 }
-/*button styling*/
+/*option button styling*/
 .question-list {
     display: flex;
     flex-direction: column;
