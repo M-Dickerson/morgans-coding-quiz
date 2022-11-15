@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <title>Morgan's Coding Quiz!</title>
+    <title>Morgan's Quiz!</title>
 </head>
 <body>
     <!--header contains score and timer-->
@@ -18,18 +18,21 @@
         </section>
     </header>
     <!--first section is the landing page-->
-    <main class="glue">
+    <main>
         <section id="landing">
             <h1>Random Trivia Game</h1>
             <p>Try to answer my questions within the time limit! Any incorrect answers will knock 10 seconds off your remaining time so please keep that in mind! All the questions are random bits of knowledge I've learned over the years :)</p>
             <button onclick="myFunction()">Start Quiz</button>
         </section>
         <!--second section is for the questions-->
-        <section class="questions"></section>
+        <section class="question-list" id="question">
+        </section>
         <!--third section is for the final screen-->
-        <section class="end-screen"></section>
+        <section class="end-screen">
+        </section>
         <!--fourth section is for feedback?-->
-        <section class="feedback"></section>
+        <section class="feedback">
+        </section>
     </main>
 
     <script src="./script.js"></script>

@@ -1,7 +1,7 @@
-// Variables for timer
+// variables for timer
 var timeEL = document.querySelector(".time");
 var secondsLeft = 20;
-// Timer
+// timer
 function setTime() {
     var timerInterval = setInterval(function() {
         secondsLeft--;
@@ -16,30 +16,37 @@ function setTime() {
 }
 setTime();
 
-// variables for quiz section
-var quizContainer = document.getElementById("questions");
-myQuestions = document.getElementById("questions");
+// variables for quiz
+
 // quiz questions
-var myQuestions = [
+var questions = [
 {
-    question: "Which of the following animals is a common hunting companion of the coyote?", answers: {
-        a: 'Cat',
-        b: 'Badger',
-        c: 'Rabbit',
-        d: 'Mouse'
-    },
-    correctAnswer: 'b'
-},
-{
-    question: "Which animal is known for slapping seals and other aquatic mammals out of the ocean?",
+    question: "Which of the following animals is the hunting companion of the coyote?", 
     answers: {
-        a: 'Sharks',
-        b: 'Whales',
-        c: 'Killer Whales',
-        d: 'Dolphins'
+        a: 'Cat', correct: false,
+        b: 'Badger', correct: true,
+        c: 'Rabbit', correct: false,
+        d: 'Mouse', correct: false
     },
-    correctAnswer: 'c'
 },
+{
+    question: "Which animal is known for slapping seals and other mammals out of the ocean?",
+    answers: {
+        a: 'Sharks', correct: false,
+        b: 'Whales', correct: false,
+        c: 'Killer Whales', correct: true,
+        d: 'Dolphins', correct: false
+    },
+},
+{
+    question: "Which animal CANNOT move their jaw sideways?",
+    answers: {
+        a: 'Dogs', correct: false,
+        b: 'Hamsters', correct: false,
+        c: 'Birds', correct: false,
+        d: 'Cats', correct: true
+    },
+}
 ]
 // button
 function myFunction() {
