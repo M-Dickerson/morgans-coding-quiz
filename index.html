@@ -22,11 +22,38 @@
         <section id="landing">
             <h1>Random Trivia Game</h1>
             <p>Try to answer my questions within the time limit! Any incorrect answers will knock 10 seconds off your remaining time so please keep that in mind! All the questions are random bits of knowledge I've learned over the years :)</p>
-            <button onclick="myFunction()">Start Quiz</button>
+            <button onclick="start()">Start Quiz</button>
         </section>
         <!--second section is for the questions-->
-        <section class="question-list" id="question">
+        <div class="question-list">
+        <section class="question1" style="display: none;">
+            <h1>Which of the following animals is the hunting companion of the coyote?</h1>
+            <ul>
+                <li><button class="option" onclick="visible()">a. Moose</button></li>
+                <li><button class="option" onclick="visible()">b. Badger</button></li>
+                <li><button class="option" onclick="visible()">c. Rabbit</button></li>
+                <li><button class="option" onclick="visible()">d. Mouse</button></li>
+            </ul>
         </section>
+        <section class="question2" style="display: none;">
+            <h1>Which animal is known for slapping seals and other mammals out of the ocean?</h1>
+            <ul>
+                <li><button class="option">a. Sharks</button></li>
+                <li><button class="option">b. Whales</button></li>
+                <li><button class="option">c. Killer Whales</button></li>
+                <li><button class="option">d. Dolphins</button></li>
+            </ul>
+        </section>
+        <section class="question3" style="display: none;">
+            <h1>Which animal CANNOT move their jaw sideways?</h1>
+            <ul>
+                <li><button class="option">a. Dogs</button></li>
+                <li><button class="option">b. Hamsters</button></li>
+                <li><button class="option">c. Birds</button></li>
+                <li><button class="option">d. Cats</button></li>
+            </ul>
+        </section>
+        </div>
         <!--third section is for the final screen-->
         <section class="end-screen">
         </section>

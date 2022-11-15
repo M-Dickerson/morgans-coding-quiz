@@ -10,3 +10,21 @@ header {
 #landing {
     text-align: center;
 }
+/*button styling*/
+.question-list {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30%;
+}
+.option {
+    border-radius: 8px;
+    border-color: blueviolet;
+    padding: 5px;
+    margin: 2.5px;
+    width: fit-content;
+    color: white;
+    background-color: blueviolet;
+}
+.option:hover {
+    background-color: palevioletred;
+}
