@@ -64,6 +64,15 @@ function timer() {
     }, 1000);
 }
 
+// local storage attempt
+var counter = document.querySelector(".score");
+var buttonScore = document.createElement("button");
+var count = localStorage.getItem("count");
+
+buttonScore.addEventListener ("click", function() {
+
+})
+
 // button that starts game DO NOT CHANGE
 var button = document.querySelector("#start")
 button.addEventListener("click", startQuiz)
