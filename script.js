@@ -1,15 +1,20 @@
 // variables for game
-var question = ["Which of the following animals is the hunting companion of the coyote?", "Which animal is known for slapping seals and other mammals out of the ocean?", "Which animal CANNOT move their jaw sideways?"];
-var answer1 = ["a. Moose", "a. Sharks", "a. Dogs"];
-var answer2 = ["b. Badger", "b. Whales", "b. Hamsters",];
-var answer3 = ["c. Rabbit", "c. Killer Whales", "c. Birds",];
-var answer4 = ["d. Mouse", "d. Dolphins", "d. Cats",];
-var correctAnswers = ["b. Badger", "c. Killer Whales", "d. Cats"];
-// appends the game variables to the page
-var body = document.body;
-var h1El = document.createElement("h1");
-h1El.textContent = question
-body.appendChild(h1El)
+var questions =[
+{   question: "Which of the following animals is the hunting companion of the coyote?",
+    answers: [{option: "Cat", correct: false}, {option: "Badger", correct: true}, {option: "Rabbit", correct: false}, {option: "Mouse", correct: false}],
+},
+{   question: "Which animal is known for slapping seals and other mammals out of the ocean?",
+    answers: [{option: "Sharks", correct: false}, {option: "Whales", correct: false}, {option: "Killer Whales", correct: true}, {option: "Dolphins", correct: false}],
+},
+{   question: "Which animal CANNOT move their jaw sideways?",
+    answers: [{option: "Dogs", correct: false}, {option: "Hamsters", correct: false}, {option: "Birds", correct: false}, {option: "Cats", correct: true}],
+}]
+// appends the game question to the page
+var questionlist = document.querySelector(".questionlist");
+var h1E = document.createElement("h1");
+h1E.textContent = questions.question;
+questionlist.appendChild(h1E);
+console.log(questionlist)
 
 var listEl = document.createElement("ol");
 var li1 = document.createElement("li");
@@ -17,20 +22,16 @@ var li2 = document.createElement("li");
 var li3 = document.createElement("li");
 var li4 = document.createElement("li");
 
-li1.textContent = answer1;
-li2.textContent = answer2;
-li3.textContent = answer3;
-li4.textContent = answer4;
+li1.textContent = questions.option;
 listEl.appendChild(li1);
-listEl.appendChild(li2);
-listEl.appendChild(li3);
-listEl.appendChild(li4);
+questionlist.appendChild(listEl);
 
 
 // starts the game itself
 function startQuiz() {
     timer()
 
+    questionlist.textContent = questions.title;
 }
 
 // timer
