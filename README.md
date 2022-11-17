@@ -1,39 +1,22 @@
-# Morgan's Coding Quiz!
+# Morgan's Quiz!
 
 ## Description
 
-The motivation and purpose behind this project was to make a quiz that utilizes local storage, as well as a timer variable. I learned a lot about implementing local storage and using javascript to create and append elements on the page.
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
-
-## Table of Contents (Optional)
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
+The motivation and purpose behind this project was to make a quiz that utilizes local storage, a timer, and javascript. I learned a lot about using javascript to create and append elements on the page. I also learned how to change "pages" without relying heavily on css and html.
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+Link to deployed application: [Link to app]()
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+To play all you have to do is click the start button! The application handles the rest.
 
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+
+[gif of application](assets/images/screenshot.png)
+ 
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
+I used this for making each array variable into a button: [stackoverflow](https://stackoverflow.com/questions/70708178/create-multiple-buttons-using-array-protoype-foreach-javascript)
 
 ## License
 
