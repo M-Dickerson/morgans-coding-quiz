@@ -6,12 +6,12 @@ The motivation and purpose behind this project was to make a quiz that utilizes 
 
 ## Usage
 
-Link to deployed application: [Link to app]()
+Link to deployed application: [Link to app](https://m-dickerson.github.io/morgans-coding-quiz/)
 
 To play all you have to do is click the start button! The application handles the rest.
 
 
-[gif of application](assets/images/screenshot.png)
+![gif of application](./assets/deployed-app.gif)
  
 
 ## Credits
