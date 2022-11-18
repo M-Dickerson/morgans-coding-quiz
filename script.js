@@ -1,85 +1,74 @@
-// variables for game DO NOT CHANGE
-var questions =[ "Which of the following animals is the hunting companion of the coyote?", "Which animal is known for slapping seals and other mammals out of the ocean?", "Which animal CANNOT move their jaw sideways?"];
-var answer1 = ["Cat", "Badger", "Rabbit", "Mouse"];
-var answer2 = ["Sharks", "Whales", "Killer Whales", "Dolphins"];
-var answer3 = ["Dogs", "Hamsters", "Birds", "Cats"];
-var correct = [1, 2, 3];
+var questions = [
+    {
+        question: "Which of the following animals is the hunting companion of the coyote?",
+        choices: ["Cat", "Badger", "Rabbit", "Mouse"],
+        correct: "Cat"
+    },
+    {
+        question: "Which animal is known for slapping seals and other mammals out of the ocean?",
+        choices: ["Sharks", "Whales", "Killer Whales", "Dolphins"],
+        correct: "Killer Whales"
+    },
+    {
+        question: "Which animal CANNOT move their jaw sideways?",
+        choices: ["Dogs", "Hamsters", "Birds", "Cats"],
+        correct: "Cats"
+    }
+]
+var score = 0
+var secondsLeft = 80;
+var Q = 0
+var questionlist = document.querySelector(".questionlist");
+var highScores = JSON.parse(localStorage.getItem("highScores")) || []
+
 // starts the game itself
 function startQuiz() {
-// DO NOT REMOVE makes the timer start on button click
+    // DO NOT REMOVE makes the timer start on button click
     timer()
-// for displaying logic for questions[i], answer1[i], answer2[i], answer3[i], answer4[i]
-    for (let i = 0; i < 1; i++) { 
-        // pulls questionlist over from html
-        var questionlist = document.querySelector(".questionlist");
-        // creates h1 for heading
-        var h1E = document.createElement("h1");
-        h1E.textContent = questions[i];
-        questionlist.appendChild(h1E);
-        // puts each array item into button
-        answer1.forEach(Element=> {
-            let button = document.createElement("button");
-            button.textContent = Element;
-            document.body.appendChild(button);
-
-            button.addEventListener("click", () => {
-                button.style.display = "none";
-                h1E.style.display = "none";
-                secondQuestion();
-                });
-        });
-    }
+    
+    askQuestion();
 }
-function secondQuestion () {
-    for (let i = 0; i < 1; i++) {
-        var questionlist = document.querySelector(".questionlist");
-        var h1E = document.createElement("h1");
-        h1E.textContent = questions[1];
-        questionlist.appendChild(h1E);
-        
-        answer2.forEach(answer2=> {
-            let button = document.createElement("button");
-            button.textContent = answer2;
-            document.body.appendChild(button);
-
-        button.addEventListener("click", () => {
-            button.style.display = "none";
-            h1E.style.display = "none";
-            thirdQuestion();
-            });
+// runs the game
+function askQuestion() {
+    questionlist.innerHTML = ""
+    var h1E = document.createElement("h1");
+    h1E.textContent = questions[Q].question
+    questionlist.appendChild(h1E);
+    var buttonDiv = document.createElement("div")
+    // buttonDiv.innerHTML = ""
+    questionlist.appendChild(buttonDiv)
+    questions[Q].choices.forEach(choice => {
+        let button = document.createElement("button");
+        button.textContent = choice;
+        button.setAttribute("value", choice)
+        button.addEventListener("click", function () {
+            if (this.value === questions[Q].correct) {
+                score++
+            } else {
+                secondsLeft -= 10
+            }
+            Q++
+            if (Q === questions.length) { endgame() }
+            else { askQuestion() }
         });
-    }
-    }
-    function thirdQuestion () {
-        for (let i = 0; i < 1; i++) { 
-            
-            var questionlist = document.querySelector(".questionlist");
-            var h1E = document.createElement("h1");
-            h1E.textContent = questions[2];
-            questionlist.appendChild(h1E);
-            
-            answer3.forEach(answer3=> {
-                let button = document.createElement("button");
-                button.textContent = answer3;
-                document.body.appendChild(button);
-            
-            button.addEventListener("click", () => {
-                button.style.display = "none";
-                h1E.style.display = "none";
-                });
-            });
-        }
-        }
+        buttonDiv.appendChild(button);
+
+    });
+}
+
+function endgame() {
+    questionlist.innerHTML = ""
+    document.querySelector(".end-screen").classList.remove("hide")
+}
 // timer DO NOT CHANGE
 function timer() {
-    var secondsLeft = 80;
     var timeEL = document.querySelector(".time");
 
-    var timerInterval = setInterval(function() {
+    var timerInterval = setInterval(function () {
         secondsLeft--;
         timeEL.textContent = "Time: " + secondsLeft;
 
-        if(secondsLeft === 0) {
+        if (secondsLeft === 0) {
             clearInterval(timerInterval);
         }
     }, 1000);
@@ -96,3 +85,9 @@ function start() {
     }
 }
 
+document.getElementById("save").addEventListener("click", function () {
+    var initials = document.getElementById("initials").value
+    var scoreObject = { initials: initials, finalScore: score * secondsLeft }
+    highScores.push(scoreObject)
+    localStorage.setItem("highScores", JSON.stringify(highScores))
+}) 

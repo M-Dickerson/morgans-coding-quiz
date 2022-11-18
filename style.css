@@ -28,3 +28,6 @@ header {
 .option:hover {
     background-color: palevioletred;
 }
+.hide {
+    display: none;
+}
